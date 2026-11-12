@@ -1,25 +1,31 @@
-# 🎈 Blank app template
+# NGAT Practice Exam
 
-A simple Streamlit app template for you to modify!
+A Streamlit-based multiple-choice practice exam with question navigation, answer tracking, review flags, scoring and answer explanations.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Requirements
 
-### How to run it on your own machine
+- Python 3.14 or newer
+- `uv`
 
-Prerequisite: install `uv` if you don't already have it.
+## Run locally
 
+```bash
+uv sync
+uv run streamlit run streamlit_app.py
 ```
-$ curl -LsSf https://astral.sh/uv/install.sh | sh
-```
 
-1. Sync the dependencies
+## Question bank
 
-   ```
-   $ uv sync
-   ```
+Edit `questions.json` to add questions. Each entry must contain:
 
-2. Run the app
+- `section`: section name
+- `question`: question text
+- `options`: at least two answer choices
+- `answer`: zero-based index of the correct option
+- `explanation`: optional explanation shown after submission
 
-   ```
-   $ uv run streamlit run streamlit_app.py
-   ```
+The app validates the question bank at startup and reports malformed entries.
+
+## Notes
+
+This is a practice tool, not an authenticated examination platform. Answers and progress are stored in Streamlit session state and are not persisted to a user account or database.
