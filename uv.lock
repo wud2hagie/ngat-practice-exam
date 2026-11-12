@@ -45,7 +45,7 @@ wheels = [
 ]
 
 [[package]]
-name = "blank-app-template"
+name = "ngat-practice-exam"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
