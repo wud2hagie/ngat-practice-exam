@@ -1,7 +1,7 @@
 [project]
-name = "blank-app-template"
+name = "ngat-practice-exam"
 version = "0.1.0"
-description = "A simple Streamlit app template."
+description = "A multiple-choice NGAT practice exam built with Streamlit."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
