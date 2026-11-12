@@ -2,31 +2,61 @@
   {
     "section": "Verbal Reasoning",
     "question": "The committee's decision was ______, leaving no room for further debate.",
-    "options": ["ambiguous", "final", "tentative", "optional"],
-    "answer": 1
+    "options": [
+      "ambiguous",
+      "final",
+      "tentative",
+      "optional"
+    ],
+    "answer": 1,
+    "explanation": "Final means settled or conclusive."
   },
   {
     "section": "Verbal Reasoning",
     "question": "ABUNDANT - Choose the word that is most nearly OPPOSITE in meaning.",
-    "options": ["Ample", "Scarce", "Copious", "Profuse"],
-    "answer": 1
+    "options": [
+      "Ample",
+      "Scarce",
+      "Copious",
+      "Profuse"
+    ],
+    "answer": 1,
+    "explanation": "Scarce means insufficient or in short supply."
   },
   {
     "section": "Quantitative Reasoning",
     "question": "2,045 + 1,879 = ?",
-    "options": ["3,824", "3,924", "3,834", "3,934"],
-    "answer": 1
+    "options": [
+      "3,824",
+      "3,924",
+      "3,834",
+      "3,934"
+    ],
+    "answer": 1,
+    "explanation": "2,045 + 1,879 = 3,924."
   },
   {
     "section": "Quantitative Reasoning",
     "question": "What comes next: 2, 4, 6, 8, __?",
-    "options": ["9", "10", "12", "14"],
-    "answer": 1
+    "options": [
+      "9",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": 1,
+    "explanation": "The sequence increases by 2 each time."
   },
   {
     "section": "Analytical Reasoning",
     "question": "All dogs are animals. All animals have four legs. Therefore:",
-    "options": ["All dogs have four legs", "Some dogs have four legs", "No dogs have four legs", "Cannot be determined"],
-    "answer": 0
+    "options": [
+      "All dogs have four legs",
+      "Some dogs have four legs",
+      "No dogs have four legs",
+      "Cannot be determined"
+    ],
+    "answer": 0,
+    "explanation": "The conclusion follows from the two premises."
   }
 ]
