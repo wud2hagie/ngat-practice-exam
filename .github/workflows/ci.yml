@@ -1,0 +1,40 @@
+name: CI
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install locked project dependencies
+        run: uv sync --locked --python 3.14
+      - name: Compile Python
+        run: uv run --locked python -m compileall -q .
+      - name: Validate question bank
+        run: |
+          uv run --locked python - <<'PY'
+          import json
+          from pathlib import Path
+          questions = json.loads(Path("questions.json").read_text(encoding="utf-8"))
+          assert isinstance(questions, list) and questions
+          for i, q in enumerate(questions, 1):
+              assert isinstance(q.get("question"), str) and q["question"].strip(), f"Question {i}: missing prompt"
+              opts = q.get("options")
+              assert isinstance(opts, list) and len(opts) >= 2, f"Question {i}: invalid options"
+              assert isinstance(q.get("answer"), int) and 0 <= q["answer"] < len(opts), f"Question {i}: invalid answer index"
+          print(f"Validated {len(questions)} questions")
+          PY
